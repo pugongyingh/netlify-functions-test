@@ -1,6 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-
+var iconv = require('iconv-lite'); //转码 解决乱码
 
 const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 //const API_ENDPOINT = 'https://api.subsume.io/hertingfordbury/v1/meetings';
