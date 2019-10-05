@@ -19,7 +19,7 @@ exports.handler = ( event, context, callback ) => {
     const questionss = $resultsPage('div[class="con layui-text"]').text();
 			callback( null, {
 				headers: {
-				'content-type': 'text/html',
+				'content-type': 'text/html;charset=gb2312',
 				},
 				statusCode: 200,
       body: questionss
