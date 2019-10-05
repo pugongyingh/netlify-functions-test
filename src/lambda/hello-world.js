@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 
-const API_ENDPOINT = 'http://bazidna.com/Account/Login?ReturnUrl=%2fBazi%2fCase';
+const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 //const API_ENDPOINT = 'https://api.subsume.io/hertingfordbury/v1/meetings';
 exports.handler = ( event, context, callback ) => {
 	axios.get( API_ENDPOINT )
@@ -16,13 +16,14 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
+    const questionss = $resultsPage('div[class="con layui-text"]');
 			callback( null, {
 				headers: {
 					'content-type': 'text/html;charset=utf-8'
 				},
 				statusCode: 200,
       body: JSON.stringify({
-        data: answers
+        data: questionss
       })
 			} );
 		} )
