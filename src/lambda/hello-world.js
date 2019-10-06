@@ -17,12 +17,13 @@ exports.handler = ( event, context, callback ) => {
         return answerText.slice(answerText.length - 1);
       });
     const questionss = $resultsPage('div[class="con layui-text"]').text();
+    questionss = '<div>' + questionss + '</div>';
 			callback( null, {
 				headers: {
 				'content-type': 'text/html; charset=utf8',
 				},
 				statusCode: 200,
-      body: '<div>' + questionss + '</div>';
+      body: questionss,
       
 			} );
 		} )
