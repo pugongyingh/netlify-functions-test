@@ -138,7 +138,8 @@ const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 exports.handler = ( event, context, callback ) => {
 	axios.get( API_ENDPOINT )
 		.then( ( response ) => {
-		const	body = iconv.decode(response.data,'utf-8').toString();
+		const	body = iconv.decode(response.data,'utf-8');
+    	//const	body = iconv.decode(response.data,'utf-8').toString();
         const $resultsPage = cheerio.load(body);
     const questions = $resultsPage("#myModal .card-box");
     const answers = Array
