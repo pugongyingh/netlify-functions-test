@@ -20,7 +20,7 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
-    let questionss = $resultsPage('div[class="con layui-text"]');
+    let questionss = $resultsPage('div[class="con layui-text"]').html();
       // let questionss = $resultsPage('div[class="con layui-text"]').text();
     //questionss = '<div>' + questionss + '</div>';
     //var xx=new GB2312UTF8();
