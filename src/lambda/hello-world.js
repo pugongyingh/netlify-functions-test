@@ -23,9 +23,8 @@ exports.handler = ( event, context, callback ) => {
 				'content-type': 'text/html; charset=utf8',
 				},
 				statusCode: 200,
-      body: JSON.stringify({
-        data: questionss
-      })
+      body: questionss
+ 
       
 			} );
 		} )
