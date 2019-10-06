@@ -150,9 +150,12 @@ exports.handler = ( event, context, callback ) => {
     var questionss = $resultsPage('div[class="con layui-text"]');
        // let questionss = $resultsPage('div[class="con layui-text"]').text();
     //questionss = '<html><body><div>' + questionss + '</div></body></html>';
-    var xx=new GB2312UTF8();
-    var Utf8=xx.Gb2312ToUtf8(questionss);
+    //var xx=new GB2312UTF8();
+    //var Utf8=xx.Gb2312ToUtf8(questionss);
     //var Gb2312=xx.Utf8ToGb2312(questionss);
+    var encoder = new TextEncoder('utf-8');
+
+    var Utf8=encoder.encode(questionss);
 			callback( null, {
 				headers: {
          'content-type': 'text/html; charset=utf-8',
