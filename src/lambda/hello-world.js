@@ -154,7 +154,7 @@ var Utf8=xx.Gb2312ToUtf8(questionss);
     
 			callback( null, {
 				headers: {
-				'content-type': 'text/html',
+				'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
       body: Utf8
