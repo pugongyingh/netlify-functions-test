@@ -155,8 +155,7 @@ exports.handler = ( event, context, callback ) => {
     //var Gb2312=xx.Utf8ToGb2312(questionss);
 			callback( null, {
 				headers: {
-				'content-type': 'text/html',
-          				//'content-type': 'text/html; charset=utf-8',
+         'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
       body: Utf8
