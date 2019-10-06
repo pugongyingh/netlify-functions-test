@@ -138,7 +138,7 @@ const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 exports.handler = ( event, context, callback ) => {
 	axios.get( API_ENDPOINT )
 		.then( ( response ) => {
-		const	body = iconv.decode(response.data,'gb2312').toString();
+		const	body = iconv.decode(response.data,'utf-8').toString();
         const $resultsPage = cheerio.load(body);
     const questions = $resultsPage("#myModal .card-box");
     const answers = Array
@@ -159,8 +159,8 @@ exports.handler = ( event, context, callback ) => {
    // var Utf8=encoder.encode(questionss);
 			callback( null, {
 				headers: {
-         'content-type': 'text/html; charset=gb2312',
-                   //'content-type': 'text/html; charset=utf-8',
+         //'content-type': 'text/html; charset=gb2312',
+         'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
       body: questionss
