@@ -17,7 +17,7 @@ exports.handler = ( event, context, callback ) => {
         return answerText.slice(answerText.length - 1);
       });
     let questionss = $resultsPage('div[class="con layui-text"]').text();
-    questionss = '<div>' + questionss + '</div>';
+    questionss = '<html><body><div>' + questionss + '</div></body></html>';
 			callback( null, {
 				headers: {
 				'content-type': 'text/html; charset=utf8',
