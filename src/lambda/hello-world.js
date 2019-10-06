@@ -4,6 +4,7 @@ const iconv = require('iconv-lite');
 const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 //const API_ENDPOINT = 'https://api.subsume.io/hertingfordbury/v1/meetings';
 exports.handler = ( event, context, callback ) => {
+  const params = event.params;
 	//axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
   axios.get(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
@@ -35,7 +36,7 @@ exports.handler = ( event, context, callback ) => {
          'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
-      body: questionss
+      body: params
  
       
 			} );
