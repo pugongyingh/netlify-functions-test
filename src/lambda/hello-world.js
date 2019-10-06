@@ -20,7 +20,7 @@ exports.handler = ( event, context, callback ) => {
     questionss = '<html><body><div>' + questionss + '</div></body></html>';
 			callback( null, {
 				headers: {
-				'content-type': 'text/html; charset=utf8',
+				'content-type': 'text/html',
 				},
 				statusCode: 200,
       body: questionss
