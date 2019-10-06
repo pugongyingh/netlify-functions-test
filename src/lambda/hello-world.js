@@ -159,7 +159,8 @@ exports.handler = ( event, context, callback ) => {
    // var Utf8=encoder.encode(questionss);
 			callback( null, {
 				headers: {
-         'content-type': 'text/html; charset=utf-8',
+         'content-type': 'text/html; charset=gb2312',
+                   //'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
       body: questionss
