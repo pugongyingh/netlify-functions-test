@@ -16,14 +16,16 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
-    const questionss = $resultsPage('div[class="con layui-text"]').text();
+    let questionss = $resultsPage('div[class="con layui-text"]').text();
     questionss = '<div>' + questionss + '</div>';
 			callback( null, {
 				headers: {
 				'content-type': 'text/html; charset=utf8',
 				},
 				statusCode: 200,
-      body: questionss,
+      body: JSON.stringify({
+        data: questionss
+      })
       
 			} );
 		} )
