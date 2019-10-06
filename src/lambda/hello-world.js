@@ -136,11 +136,14 @@ return substr+str1;
 const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 //const API_ENDPOINT = 'https://api.subsume.io/hertingfordbury/v1/meetings';
 exports.handler = ( event, context, callback ) => {
-	axios.get( API_ENDPOINT )
-		.then( ( response ) => {
-		const	body = iconv.decode(response.data,'gb2312');
+	//axios.get( API_ENDPOINT )
+	//	.then( ( response ) => {
+  axios.get(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
+    let html = iconv.decode(response.data, "gb2312");    
+    
+		//const	body = iconv.decode(response.data,'gb2312');
     	//const	body = iconv.decode(response.data,'utf-8').toString();
-        const $resultsPage = cheerio.load(body);
+        const $resultsPage = cheerio.load(html);
     const questions = $resultsPage("#myModal .card-box");
     const answers = Array
       .from(questions)
@@ -164,7 +167,7 @@ exports.handler = ( event, context, callback ) => {
          'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
-      body: questionss
+      body: html
  
       
 			} );
