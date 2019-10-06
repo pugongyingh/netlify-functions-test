@@ -6,7 +6,7 @@
 exports.handler = function(event, context, callback) {
 // export function handler(event, context, callback) {
   // GET parameters
-  let params = event.queryStringParameters
+  let params = event.queryStringParameters.city
   console.log('queryStringParameters', event.queryStringParameters)
   for (const prop in params) {
     console.log(`params.${prop} = ${params[prop]}`);
@@ -18,6 +18,6 @@ exports.handler = function(event, context, callback) {
 
   callback(null, {
     statusCode: 200,
-    body: JSON.stringify({ params }),
+    body: params
   })
 }
