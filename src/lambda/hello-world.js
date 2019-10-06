@@ -22,7 +22,7 @@ exports.handler = ( event, context, callback ) => {
 				'content-type': 'text/html; charset=utf8',
 				},
 				statusCode: 200,
-      body: '<html><body><div>' + questionss + '</div></body></html>';
+      body: '<div>' + questionss + '</div>';
       
 			} );
 		} )
