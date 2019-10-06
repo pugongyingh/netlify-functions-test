@@ -22,7 +22,7 @@ exports.handler = ( event, context, callback ) => {
       });
     let questionss = $resultsPage('div[class="con layui-text"]').html();
       // let questionss = $resultsPage('div[class="con layui-text"]').text();
-    //questionss = '<div>' + questionss + '</div>';
+    questionss = '<div class="con layui-text" style="font-size: 16px; margin-top: 10px; line-height: 180%;color: #000000">' + questionss + '</div>';
     //var xx=new GB2312UTF8();
     //var Utf8=xx.Gb2312ToUtf8(questionss);
     //var Gb2312=xx.Utf8ToGb2312(questionss);
