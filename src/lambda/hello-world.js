@@ -1,6 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-
+const iconv = require('iconv-lite');
 function GB2312UTF8(){
 this.Dig2Dec=function(s){
 var retV = 0;
@@ -138,7 +138,8 @@ const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
 exports.handler = ( event, context, callback ) => {
 	axios.get( API_ENDPOINT )
 		.then( ( response ) => {
-        const $resultsPage = cheerio.load(response.data);
+		const	body = iconv.decode(response.data,'gb2312').toString();
+        const $resultsPage = cheerio.load(body);
     const questions = $resultsPage("#myModal .card-box");
     const answers = Array
       .from(questions)
@@ -147,21 +148,21 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
-    var questionss = $resultsPage('div[class="con layui-text"]');
-       // let questionss = $resultsPage('div[class="con layui-text"]').text();
-    //questionss = '<html><body><div>' + questionss + '</div></body></html>';
+    //var questionss = $resultsPage('div[class="con layui-text"]');
+       let questionss = $resultsPage('div[class="con layui-text"]').text();
+    questionss = '<div>' + questionss + '</div>';
     //var xx=new GB2312UTF8();
     //var Utf8=xx.Gb2312ToUtf8(questionss);
     //var Gb2312=xx.Utf8ToGb2312(questionss);
-    var encoder = new TextEncoder('gbk');
+    //var encoder = new TextEncoder('gbk');
 
-    var Utf8=encoder.encode(questionss);
+   // var Utf8=encoder.encode(questionss);
 			callback( null, {
 				headers: {
          'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
-      body: Utf8
+      body: questionss
  
       
 			} );
