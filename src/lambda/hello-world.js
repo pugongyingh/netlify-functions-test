@@ -153,7 +153,7 @@ exports.handler = ( event, context, callback ) => {
     //var xx=new GB2312UTF8();
     //var Utf8=xx.Gb2312ToUtf8(questionss);
     //var Gb2312=xx.Utf8ToGb2312(questionss);
-    var encoder = new TextEncoder('utf-8');
+    var encoder = new TextEncoder('gb2312');
 
     var Utf8=encoder.encode(questionss);
 			callback( null, {
