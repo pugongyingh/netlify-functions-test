@@ -147,7 +147,8 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
-    let questionss = $resultsPage('div[class="con layui-text"]').text();
+    var questionss = $resultsPage('div[class="con layui-text"]');
+       // let questionss = $resultsPage('div[class="con layui-text"]').text();
     //questionss = '<html><body><div>' + questionss + '</div></body></html>';
     var xx=new GB2312UTF8();
 //var Utf8=xx.Gb2312ToUtf8(questionss);
