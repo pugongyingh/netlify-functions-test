@@ -10,6 +10,11 @@ exports.handler = ( event, context, callback ) => {
   axios.get(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
     let html = iconv.decode(response.data, "gb2312");    
     
+    
+    // 也可以通过 params 对象传递参数
+//axios.get('/user', {params: {ID: 12345}}).then(function (response) {
+    
+    
 		//const	body = iconv.decode(response.data,'gb2312');
     	//const	body = iconv.decode(response.data,'utf-8').toString();
         const $resultsPage = cheerio.load(html);
