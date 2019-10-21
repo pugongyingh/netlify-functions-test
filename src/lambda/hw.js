@@ -20,12 +20,11 @@ exports.handler = ( event, context, callback ) => {
     	//const	body = iconv.decode(response.data,'utf-8').toString();
         const $resultsPage = cheerio.load(response.data);
  let hhh = '
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8" http-equiv="Content-Type">
-<title>八字合婚在线测试888</title>
+<title>888</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
