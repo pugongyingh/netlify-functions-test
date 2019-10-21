@@ -7,8 +7,8 @@ exports.handler = ( event, context, callback ) => {
   let params = event.queryStringParameters
 	//axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
-  axios.post(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
-    let html = iconv.decode(response.data, "gb2312");    
+  axios.post(API_ENDPOINT, { responseType: "html" }).then(function(response){
+  //  let html = iconv.decode(response.data, "gb2312");    
     
     
     // 也可以通过 params 对象传递参数
@@ -17,15 +17,8 @@ exports.handler = ( event, context, callback ) => {
     
 		//const	body = iconv.decode(response.data,'gb2312');
     	//const	body = iconv.decode(response.data,'utf-8').toString();
-        const $resultsPage = cheerio.load(html);
-    const questions = $resultsPage("#myModal .card-box");
-    const answers = Array
-      .from(questions)
-      .map(question => $resultsPage(question).find(".alert")[0])
-      .map(answerEl => {
-        const answerText = $resultsPage(answerEl).text();
-        return answerText.slice(answerText.length - 1);
-      });
+        const $resultsPage = cheerio.load(response.data);
+
     let questionss = $resultsPage('div[class="center"]').html();
       // let questionss = $resultsPage('div[class="con layui-text"]').text();
     questionss = '<div class="con layui-text" style="font-size: 16px; margin-top: 10px; line-height: 180%;color: #000000">' + questionss + '</div>';
