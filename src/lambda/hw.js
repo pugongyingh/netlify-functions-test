@@ -7,7 +7,7 @@ exports.handler = ( event, context, callback ) => {
   let params = event.queryStringParameters
 	//axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
-  axios.get(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
+  axios.post(API_ENDPOINT, { responseType: "arraybuffer" }).then(function(response){
     let html = iconv.decode(response.data, "gb2312");    
     
     
