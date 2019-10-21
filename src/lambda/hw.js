@@ -31,7 +31,7 @@ exports.handler = ( event, context, callback ) => {
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
 <meta name="twcClient" content="false" id="twcClient">
-<link href="/css/html5v3style.css" rel="stylesheet" type="text/css">
+<link href="https://m.zhouyi.cc/css/html5v3style.css" rel="stylesheet" type="text/css">
 </head>
 <body>';
    let www = '</body></html>'; 
