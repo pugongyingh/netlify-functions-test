@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const iconv = require('iconv-lite');
-const API_ENDPOINT = 'http://m-smsc.jyjk.com/sswzx.php?id=5323333666655554791';
+const API_ENDPOINT = 'https://m.zhouyi.cc/bazi/hh/hehun.php?txtName=%E6%9D%8E%E6%98%8E&data_type=0&cboYear=1989&cboMonth=10&cboDay=21&cboHour=17&cboMinute=6&pid=%E5%87%BA%E7%94%9F%E7%9C%81%E4%BB%BD&cid=%E5%87%BA%E7%94%9F%E5%8E%BF%E5%B8%82&zty=0&txtName2=%E6%96%B9%E7%BA%A2&data_type2=0&cboYear2=1990&cboMonth2=10&cboDay2=21&cboHour2=17-%E9%85%89&cboMinute2=6&pid2=&cid2=&zty2=0';
 //const API_ENDPOINT = 'https://api.subsume.io/hertingfordbury/v1/meetings';
 exports.handler = ( event, context, callback ) => {
   let params = event.queryStringParameters
@@ -26,7 +26,7 @@ exports.handler = ( event, context, callback ) => {
         const answerText = $resultsPage(answerEl).text();
         return answerText.slice(answerText.length - 1);
       });
-    let questionss = $resultsPage('div[class="con layui-text"]').html();
+    let questionss = $resultsPage('div[class="center"]').html();
       // let questionss = $resultsPage('div[class="con layui-text"]').text();
     questionss = '<div class="con layui-text" style="font-size: 16px; margin-top: 10px; line-height: 180%;color: #000000">' + questionss + '</div>';
     //var xx=new GB2312UTF8();
