@@ -9,7 +9,16 @@ exports.handler = ( event, context, callback ) => {
 
  //axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
-  axios.post(API_ENDPOINT,data, { responseType: "application/x-www-form-urlencoded" }).then(function(response){
+ 
+     axios.post(API_ENDPOINT, {
+        headers: {
+            //"Access-Control-Allow-Origin": "http://localhost:3000",
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data,
+        responseType: 'html'
+    }).then(function(response){
+ // axios.post(API_ENDPOINT,data, { responseType: "application/x-www-form-urlencoded" }).then(function(response){
   //  let html = iconv.decode(response.data, "gb2312");    
     
     
