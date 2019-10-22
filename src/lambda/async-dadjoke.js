@@ -10,7 +10,8 @@ exports.handler = async function handler(event, context) {
     const data = response.data
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke })
+      //body: JSON.stringify({ msg: data.joke })
+      body: "999"
     }
   } catch (err) {
     console.log(err) // output to netlify function log
