@@ -11,10 +11,10 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
 	//	.then( ( response ) => {
  
      axios.post(API_ENDPOINT,data, {
-    baseURL: 'https://m.zhouyi.cc',
+    baseURL: 'chrome-extension://dgkahgnanakhlgjkeefeddoeoinbobbk',
     responseType: 'text/html',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }}).then(function(response){
  // axios.post(API_ENDPOINT,data, { responseType: "application/x-www-form-urlencoded" }).then(function(response){
   //  let html = iconv.decode(response.data, "gb2312");    
