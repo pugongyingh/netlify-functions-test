@@ -10,7 +10,7 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
  //axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
  
-     axios.post(API_ENDPOINT,params, {
+     axios.post(API_ENDPOINT,data, {
     responseType: 'text/html',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
