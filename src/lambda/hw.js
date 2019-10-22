@@ -26,7 +26,7 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
     
 		//const	body = iconv.decode(response.data,'gb2312');
     	//const	body = iconv.decode(response.data,'utf-8').toString();
-        const $resultsPage = cheerio.load(response.data);
+      //  const $resultsPage = cheerio.load(response.data);
  let hhh = '
 <html>
 <head>
@@ -44,9 +44,9 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
    let www = '</body></html>'; 
     
     
-    let questionss = $resultsPage('div[class="center"]').html();
+   // let questionss = $resultsPage('div[class="center"]').html();
       // let questionss = $resultsPage('div[class="con layui-text"]').text();
-    questionss = hhh + questionss + www;
+  //  questionss = hhh + questionss + www;
     //var xx=new GB2312UTF8();
     //var Utf8=xx.Gb2312ToUtf8(questionss);
     //var Gb2312=xx.Utf8ToGb2312(questionss);
@@ -59,7 +59,7 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
          'content-type': 'text/html; charset=utf-8',
 				},
 				statusCode: 200,
-     body: questionss,
+     body: hhh,
       
 			} );
 		} )
