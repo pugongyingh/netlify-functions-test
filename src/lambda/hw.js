@@ -10,8 +10,8 @@ let data = "txtName=%E6%9D%8E%E6%98%8E&rdoSex=1&data_type=0&cboYear=2008&cboMont
  //axios.get( API_ENDPOINT )
 	//	.then( ( response ) => {
  
-     axios.post(API_ENDPOINT,data, {
-    baseURL: 'chrome-extension://dgkahgnanakhlgjkeefeddoeoinbobbk',
+     axios.post(API_ENDPOINT, {
+    baseURL: 'https://gallant-noether-a95379.netlify.com',
     responseType: 'text/html',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
