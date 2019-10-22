@@ -15,7 +15,7 @@ exports.handler = ( event, context, callback ) => {
             //"Access-Control-Allow-Origin": "http://localhost:3000",
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data,
+        data: data,
         responseType: 'html'
     }).then(function(response){
  // axios.post(API_ENDPOINT,data, { responseType: "application/x-www-form-urlencoded" }).then(function(response){
